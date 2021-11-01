@@ -371,7 +371,7 @@ Podéis ver cómo hay un pico inicial en el que el motor quiere llegar rápido a
 
 Ahora, si ejecutamos otra vez el programa obstaculizando el motor (frenando con la mano, por ejemplo), obtenemos la siguiente respuesta:
 
-![image-20211101135020818](/Users/albert/Desktop/esp32-imu-super-new/firmware-esp32-imu/assets/imgs/torque-trans-obstacle.png)
+![image-20211101135020818](./assets/imgs/torque-trans-obstacle.png)
 
 En este caso, le he fastidiado bastante y no lo dejaba girar en absoluto, ocasionando que el motor intentara moverse, se parase, intentaba moverse otra vez, y así periódicamente. De ahí los pulsos que veis en la gráfica hasta llegar al final, donde se ve como ya no hay obstáculo.
 
@@ -446,7 +446,7 @@ void loop() {
 
 Ahora, para el caso sin obstáculo tenemos:
 
-![image-20211101140230310](/Users/albert/Desktop/esp32-imu-super-new/firmware-esp32-imu/assets/imgs/torque-trans-no-obstacle-integrated.png)
+![image-20211101140230310](./assets/imgs/torque-trans-no-obstacle-integrated.png)
 
 Vemos el mismo transitorio, pero destacan un par de aspectos debidos a la integración:
 
@@ -459,7 +459,7 @@ Vemos el mismo transitorio, pero destacan un par de aspectos debidos a la integr
 
 En el caso del obstaculo obtenemos:
 
-![image-20211101140725189](/Users/albert/Desktop/esp32-imu-super-new/firmware-esp32-imu/assets/imgs/torque-trans-obstacle-integrated.png)
+![image-20211101140725189](./assets/imgs/torque-trans-obstacle-integrated.png)
 
 En este caso, fijaros que tenemos los mismos pulsos porque el motor hace lo mismo que antes: si te pasas de fuerza el motor para de intentarlo y lo intenta unos milisegundos más tarde. Por esos siguen apareciendo los pulsos. Pero fijaros en su magnitud. Debido a que ahora estamos integrando, podemos observar que se obtiene un valor de par que dobla al caso sin obstáculo. Ahora, midiendo directamente el valor de la integral, sí que podemos diferenciar el caso en el que hay un obstáculo y en el que no.
 
